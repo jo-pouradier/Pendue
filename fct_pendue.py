@@ -162,7 +162,7 @@ def verif_lettre(mot_donner, dico_deviner, list_cacher, lettre_used, nbr_erreur)
                 list_cacher[dico_deviner[l][i]] = l
             # on enleve cette lettre du dico (avec l'indice qui lui correspond)
             dico_deviner.pop(l)
-            
+
         # si la lettre est deja utiliser on ajoute une erreur
         elif l in ''.join(lettre_used):
             nbr_erreur += 1
@@ -221,9 +221,16 @@ def choix_diff(diff, dict_mots):
             0, len(dict_mots[diff])-1)].lower()
         dico_deviner = creation_dico_mot(mot_deviner)
         list_cacher = creation_list_cacher(mot_deviner)
-    except KeyError:
-        return 'KeyError'
+    except Exception:
+        return 'Error'
     return mot_deviner, dico_deviner, list_cacher
+
+
+def verif_restart(restart):
+    if restart.upper() == 'YES' or restart.upper() == 'NO':
+        return True
+    else:
+        return False
 
 
 def replay(restart):
@@ -237,5 +244,5 @@ def replay(restart):
     '''
     if restart.upper() == "YES":
         os.execl(sys.executable, sys.executable, * sys.argv)
-    else:
+    elif restart.upper() == 'NO':
         sys.exit()

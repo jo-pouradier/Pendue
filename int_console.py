@@ -14,7 +14,7 @@ dict_mots = json.loads(data)
 # input de la diff:
 
 
-def choix_diff():
+def choix_difficulte():
     '''
     choix_diff
     dev: Joseph
@@ -28,14 +28,14 @@ def choix_diff():
     '''
     dico_deviner = {}
     list_cacher = []
-    diff = input('"Entrez une difficulté entre 4 et 11 svp"')
+    diff = input('Entrez une difficulté entre 4 et 11 svp. ')
     return_diff = fctp.choix_diff(diff, dict_mots)
     if return_diff == 'not digit':
-        print("Erreur, vous n'avez pas entré un nombre")
-        choix_diff()
-    elif return_diff == 'KeyError':
-        print('un chiffre entre 4 et 11 svp')
-        choix_diff()
+        print("Erreur, vous n'avez pas entré un nombre. ")
+        return choix_difficulte()
+    elif return_diff == 'Error':
+        print('\n Un chiffre entre 4 et 11 svp : ')
+        return choix_difficulte()
     else:
         mot_deviner, dico_deviner, list_cacher = return_diff
     return mot_deviner, dico_deviner, list_cacher
@@ -60,7 +60,8 @@ def input_lettres(mot_deviner, dico_deviner, list_cacher, lettres_used, nbr_erre
         lettres_used [list] : presente les lettres deja utilisées
         nbr_erreur [int] : compte le nbr d'erreur
     '''
-    print('mot a deviner: ' + ''.join(list_cacher))
+
+    print('mot a deviner: ' + ' '.join(list_cacher))
     mot_donner = input("Entrez des lettres :")
     if not mot_donner.isalpha() or mot_donner == '':
         print('Erreur. ' + " Veuillez rentrer que des lettres")
@@ -73,23 +74,30 @@ def input_lettres(mot_deviner, dico_deviner, list_cacher, lettres_used, nbr_erre
         mot_donner = ''
         #print("mot a trouver: ", ''.join(list_cacher))
         print('lettres utiliser: ', ''.join(lettres_used))
-        print("nombre d'erreur: ", nbr_erreur)
+        print("nombre d'erreur: ", nbr_erreur,
+              'Il vous reste ', 12-nbr_erreur, 'essai.')
         print('\n')
     # win or loose:
     w_or_l = fctp.win_or_loose(dico_deviner, nbr_erreur)
     if w_or_l == True:
-        print('Bravo', 'Vous avez gagnez! Le mot à deviner était: ' +
-              mot_deviner.upper() + '. Bien jouer!')
-        fctp.replay()
-    if w_or_l == False:
-        print('Perdu', ('Le mot a deviner était: ' +
-                        mot_deviner.upper() + '. \n Dommage!'))
-        restart = input('Voulez vous rejouer?  YES/NO')
+        print('Bravo', 'Vous avez gagnez! Le mot à deviner était: ',
+              mot_deviner.upper(), '. Bien jouer!')
+        restart = input('Voulez vous rejouer?  YES/NO : ')
+        while fctp.verif_restart(restart) == False:
+            restart = input('Voulez vous rejouer?  YES/NO : ')
+        fctp.replay(restart)
+
+    elif w_or_l == False:
+        print('Perdu', 'Le mot a deviner était: ',
+              mot_deviner.upper(), '. \n Dommage!')
+        restart = input('Voulez vous rejouer?  YES/NO : ')
+        while fctp.verif_restart(restart) == False:
+            restart = input('Voulez vous rejouer?  YES/NO : ')
         fctp.replay(restart)
     else:
         input_lettres(mot_deviner, dico_deviner,
                       list_cacher, lettres_used, nbr_erreur)
 
 
-mot_deviner, dico_deviner, list_cacher = choix_diff()
+mot_deviner, dico_deviner, list_cacher = choix_difficulte()
 input_lettres(mot_deviner, dico_deviner, list_cacher, lettres_used, nbr_erreur)

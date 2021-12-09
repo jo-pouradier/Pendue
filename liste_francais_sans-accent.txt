@@ -1979,7 +1979,6 @@ augmentent
 augmenter
 augure
 auguste
-aujourd'hui
 aula
 aumone
 aumonier
@@ -2768,7 +2767,6 @@ blame
 blamer
 blanc
 blanc de chaux
-blanc d'uf
 Blanchard
 blanche
 blanches
@@ -2930,7 +2928,6 @@ bouches
 bouchon
 boucle
 boucle
-boucle d'oreille
 bouclee
 boucler
 bouclier
@@ -3448,7 +3445,6 @@ canicule
 caniveau
 cannabis
 canne
-canne  peche
 cannele
 cannes
 cannibale
@@ -3895,8 +3891,6 @@ chapitres
 chapon
 chaque
 char
-char d'assaut
-char de combat
 charabia
 charasse
 charbon
@@ -3990,22 +3984,18 @@ chauve
 chauvinisme
 chaux
 chef
-chef-d'uvre
 chefs
 cheikh
 chelem
 Chelmsford
 Chemery
 chemin
-chemin  fer
-chemin de fer
 cheminement
 cheminer
 cheminot
 cheminots
 chemins
 chemise
-chemise de nuit
 chemises
 chemisette
 chemisier
@@ -5492,14 +5482,6 @@ coulisses
 couloir
 couloirs
 coup
-coup de feu
-coup de foudre
-coup de froid
-coup de griffe
-coup de pied
-coup de vent
-coup d'Etat
-coup d'il
 coup monte
 coupable
 coupables
@@ -8630,7 +8612,6 @@ etape
 etapes
 Etat
 etat
-etat d'esprit
 etat mental
 etatique
 etatiques
@@ -10962,7 +10943,6 @@ horreurs
 horrible
 horripiler
 hors
-hors d'uvre
 horst
 hospitalier
 hospitaliere
@@ -14592,7 +14572,6 @@ nazi
 nazie
 nazis
 nazisme
-N'djamena
 ne
 ne
 neanmoins
@@ -16187,7 +16166,6 @@ physiquement
 physiques
 pianiste
 piano
-piano  queue
 pianoforte
 PIB
 pic
@@ -16399,7 +16377,6 @@ plomb
 plombier
 plonge
 plonge
-plonge dans
 plongee
 plongeon
 plonger
@@ -16420,9 +16397,6 @@ pluraliste
 pluralite
 pluriel
 plus
-plus bas
-plus cher
-plus en plus
 plusieurs
 plutot
 pluvial
@@ -16523,9 +16497,6 @@ Polynesie
 polyphonique
 polytechnique
 pomme
-pomme d'Adam
-pomme de pin
-pomme de terre
 pommes
 pommette
 pommettes
@@ -16969,7 +16940,6 @@ presidium
 presomption
 presomptueux
 presque
-presqu'ile
 pressant
 presse
 presse
@@ -17073,7 +17043,6 @@ principale
 principalement
 principales
 principaute
-Principaute d'Andorre
 principaux
 principe
 principes
@@ -17592,7 +17561,6 @@ quelle
 quelles
 quelque
 quelques
-quelqu'un
 quels
 quemander
 Queneau
@@ -19763,7 +19731,6 @@ sensiblement
 sensibles
 sensualite
 sensuelle
-s'ensuivre
 sent
 sentait
 sentant
