@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import messagebox
 import fct_pendue as fctp
 import json
-import random
 
 # on recupere les mots du json
 with open('mots_fr.json', 'r') as file:
@@ -70,10 +69,12 @@ def choix_diff(event):
         messagebox.showinfo(
             'Erreur', "Entrez un nombre entre 4 et 11 svp")
         entry_diff.delete(0, len(diff))
-    elif return_diff == 'KeyError':
+        entry_diff.focus_force()
+    elif return_diff == 'Error':
         messagebox.showinfo(
             'Erreur', "Entrez un nombre entre 4 et 11 svp")
         entry_diff.delete(0, len(diff))
+        entry_diff.focus_force()
     else:
         mot_deviner, dico_deviner, list_cacher = return_diff
         label_cacher.config(text=' '.join(list_cacher))
@@ -106,6 +107,7 @@ def update(event):
         messagebox.showinfo(
             'Erreur', "Veuillez rentrer que des lettres")
         entry_lettres.delete(0, len(mot_donner))
+        entry_lettres.focus_force()
     else:
         dico_deviner, list_cacher, lettres_used, nbr_erreur = fctp.verif_lettre(
             mot_donner, dico_deviner, list_cacher, lettres_used, nbr_erreur)
@@ -119,14 +121,14 @@ def update(event):
     if w_or_l == True:
         messagebox.showinfo(
             'Bravo', 'Vous avez gagnez! Le mot à deviner était: ' + mot_deviner.upper() + '. Bien jouer!')
-        restart=messagebox.askquestion('Rejouer ?', 'Voulez vous rejouer? ')
+        restart = messagebox.askquestion('Rejouer ?', 'Voulez vous rejouer? ')
         fctp.replay(restart)
     if w_or_l == False:
         messagebox.showinfo(
             'Perdu', ('Le mot a deviner était: ' + mot_deviner.upper() + '. \n Dommage!'))
-        restart=messagebox.askquestion('Rejouer ?', 'Voulez vous rejouer? ')
+        restart = messagebox.askquestion('Rejouer ?', 'Voulez vous rejouer? ')
         fctp.replay(restart)
-    
+
     # modification des labels qui ont changé:
     label_cacher.config(text=' '.join(list_cacher))
     label_lettres_used.config(text=' '.join(lettres_used))
